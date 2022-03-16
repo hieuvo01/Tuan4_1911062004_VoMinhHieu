@@ -1,0 +1,38 @@
+﻿@model IEnumerable<Tuan4_1911062004_VoMinhHieu.Models.Sach>
+@{
+    ViewBag.Title = "ListSach";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>THÔNG TIN SÁCH</h2>
+<p>
+    @Html.ActionLink("Tạo mới sách", "Create")
+</p>
+<table cellpadding="16" class="table">
+    <tr>
+        <th> Mã loại </th>
+        <th> Tên sách</th>
+        <th> Hình </th>
+        <th> Giá bán</th>
+        <th> Ngày cập nhật </th>
+        <th> Số lượng tồn</th>
+        <th></th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.maloai)</td>
+            <td>@Html.DisplayFor(modelItem => item.tensach)</td>
+            <td><img width="84" src="@item.hinh" alt="hinh thumbnail" /></td>
+            <td>@Html.DisplayFor(modelItem => item.giaban)</td>
+            <td>@Html.DisplayFor(modelItem => item.ngaycapnhat)</td>
+
+
+            <td>@Html.DisplayFor(modelItem => item.soluongton)</td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.masach }) 
+                @Html.ActionLink("Detail", "Detail", new { id = item.masach })
+                @Html.ActionLink("Delete", "Delete", new { id = item.masach })
+            </td>
+        </tr>
+    }
+</table>
