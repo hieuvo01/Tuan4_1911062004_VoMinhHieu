@@ -1,3 +1,15 @@
 ﻿<a class="getstarted scrollto active" href="@Url.Action("GioHang","GioHang")" style="font-weight:bold; text-decoration:none">
-    Giỏ hàng (@ViewBag.Tongsoluongsanpham)
+    Giỏ hàng <p class="ghContent" >@ViewBag.Tongsoluongsanpham</p>
 </a>
+
+<style>
+    .ghContent {
+        width: 23px;
+        height: 23px;
+        border-radius: 12px;
+        background-color: #ff00ba;
+        margin-left: 8px;
+        text-align: center;
+        font-size: 19px;
+    }
+</style>

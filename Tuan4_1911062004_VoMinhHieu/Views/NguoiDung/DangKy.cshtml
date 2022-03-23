@@ -1,0 +1,107 @@
+﻿@model Tuan4_1911062004_VoMinhHieu.Models.KhachHang
+
+@{
+    ViewBag.Title = "DangKy";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="note">Đăng ký tài khoản</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group ">
+            <label class="control-label col-md-2">Họ tên</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.hoten, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.hoten, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">Tên đăng nhập</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.tendangnhap, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.tendangnhap, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">Mật khẩu</label>
+            <div class="col-md-10">
+                @*            @Html.EditorFor(model => model.matkhau, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.matkhau, "", new { @class = "text-danger" })*@
+                <input class="form-control text-box single-line" id="matkhau" name="matkhau" type="password" value="">
+                <span class="field-validation-valid text-danger" data-valmsg-for="matkhau" data-valmsg-replace="true"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="MatKhauXacNhan">
+                Xác nhận mật khẩu
+            </label>
+            <div class="col-md-10">
+                <input class="form-control text-box single-line input-validation-error"
+                       data-val="true" data-val-required="Phải nhập mật khẩu xác nhận!"
+                       id="MatKhauXacNhan" name="MatKhauXacNhan" type="password" value="" aria-
+                       describedby="MatKhauXacNhan-error" aria-invalid="true">
+
+                @ViewData["NhapMKXN"]
+                @ViewData["MatKhauGiongNhau"]
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">Email</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.email, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.email, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">Địa chỉ</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.diachi, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.diachi, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">Điện thoại</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.dienthoai, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.dienthoai, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">Ngày sinh</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ngaysinh, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ngaysinh, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Đăng ký" class="btnSubmit" />
+            </div>
+        </div>
+        <div class="form-group">
+            Đã có tài khoản?
+            @Html.ActionLink("Đăng nhập", "DangNhap")
+        </div>
+    </div>
+
+}
+
+
+
+
+
+

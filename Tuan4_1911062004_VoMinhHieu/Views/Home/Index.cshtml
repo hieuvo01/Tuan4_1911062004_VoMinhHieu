@@ -4,7 +4,7 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<h2>HUTECH SÁCH</h2>
+<h2>SÁCH HIỆN CÓ</h2>
 <div class="row">
     @foreach (var item in Model)
     {
@@ -17,7 +17,7 @@
                     <p><strong>Giá: </strong>@item.giaban</p>
                     <p><strong>Ngày cập nhật: </strong>@item.ngaycapnhat</p>
                     <p><strong>Số lượng tồn: </strong>@item.soluongton</p>
-                    <p><img width="168" src="@item.hinh" alt="hinh thumnail"></p>
+                    <p><img width="168" height="240" src="@item.hinh" alt="hinh thumnail"></p>
 
   
 

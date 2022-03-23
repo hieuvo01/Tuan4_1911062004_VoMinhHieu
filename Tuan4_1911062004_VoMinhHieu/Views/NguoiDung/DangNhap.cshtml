@@ -1,0 +1,62 @@
+﻿@model Tuan4_1911062004_VoMinhHieu.Models.KhachHang
+
+@{
+    ViewBag.Title = "DangNhap";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="note">Đăng nhập</h2>
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <div class="form-group">
+            <p class="control-label col-md-2">Tên đăng nhập</p>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.tendangnhap, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.tendangnhap, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <p class="control-label col-md-2">Mật khẩu</p>
+            <div class="col-md-10">
+                @*                @Html.EditorFor(model => model.matkhau, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.matkhau, "", new { @class = "text-danger" })*@
+                <input class="form-control text-box single-line" id="matkhau" name="matkhau" type="password" value="">
+                <span class="field-validation-valid text-danger" data-valmsg-for="matkhau" data-valmsg-replace="true"></span>
+            </div>
+        </div>
+
+
+
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Đăng nhập" class="btnSubmit" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.ActionLink("Đăng ký", "DangKy")
+        </div>
+    </div>
+}
+
+
+<style>
+    .btnSubmit {
+        border: none;
+        border-radius: 1.5rem;
+        padding: 1%;
+        width: 20%;
+        cursor: pointer;
+        background: #0062cc;
+        color: #fff;
+    }
+</style>

@@ -21,9 +21,14 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Trang chủ", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Thể loại", "About", "Home")</li>
                     <li>@Html.ActionLink("Sách", "ListSach", "Sach")</li>
                     <li>@Html.Partial("~/Views/GioHang/GioHangPartial.cshtml")</li>
+                    <div class="nav navbar-nav" style="float: right">
+                    <li>@Html.ActionLink("Đăng ký", "DangKy", "NguoiDung")</li>
+                    <li>@Html.ActionLink("Đăng nhập", "DangNhap", "NguoiDung")</li>
+                    </div>
+
+
                 </ul>
             </div>
         </div>
